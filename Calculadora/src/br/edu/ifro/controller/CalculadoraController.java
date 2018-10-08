@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.edu.ifro.controller;
 
 import java.net.URL;
@@ -14,10 +9,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-/**
- *
- * @author 3019657
- */
 public class CalculadoraController implements Initializable {
     
     @FXML
@@ -26,28 +17,44 @@ public class CalculadoraController implements Initializable {
     @FXML
     private Button btnSoma;
     
+    private Button btnDivicao;
+    
+    private Button btnMutiplicacao;
+    
+    private Button btnSubitracao;
+    
     @FXML
     private Label lbResultado;
     
-    @FXML
     private void soma(ActionEvent event) {
-       calc("+") ;
-    }
-    
-    @FXML
-    private void subtracao(ActionEvent event) {
-        calc("-") ;
-    }
-    
-    private void calc(String op) {
-        Double num1 = Double.parseDouble(txtNumero1.getText());
-        Double num2 = Double.parseDouble(txtNumero2.getText());
-        Double result = null;
-        switch (op) {
-            case "+":
+       Double num1 = Double.parseDouble(txtNumero1.getText());
+       Double num2 = Double.parseDouble(txtNumero2.getText());
+       Double result = null;
                 result = num1+num2;
-                
-        }
+        lbResultado.setText(result.toString());
+    }
+    
+    private void subtracao(ActionEvent event) {
+        Double num1 = Double.parseDouble(txtNumero1.getText());
+       Double num2 = Double.parseDouble(txtNumero2.getText());
+       Double result = null;
+                result = num1-num2;
+        lbResultado.setText(result.toString());
+    }
+    
+    private void mutiplicacao(ActionEvent event) {
+        Double num1 = Double.parseDouble(txtNumero1.getText());
+       Double num2 = Double.parseDouble(txtNumero2.getText());
+       Double result = null;
+                result = num1*num2;
+        lbResultado.setText(result.toString());
+    }
+    
+    private void divicao(ActionEvent event) {
+        Double num1 = Double.parseDouble(txtNumero1.getText());
+       Double num2 = Double.parseDouble(txtNumero2.getText());
+       Double result = null;
+                result = num1/num2;
         lbResultado.setText(result.toString());
     }
     
