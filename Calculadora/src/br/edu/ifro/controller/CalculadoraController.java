@@ -17,15 +17,19 @@ public class CalculadoraController implements Initializable {
     @FXML
     private Button btnSoma;
     
+    @FXML
     private Button btnDivicao;
     
+    @FXML
     private Button btnMutiplicacao;
     
+    @FXML
     private Button btnSubitracao;
     
     @FXML
     private Label lbResultado;
     
+    @FXML
     private void soma(ActionEvent event) {
        Double num1 = Double.parseDouble(txtNumero1.getText());
        Double num2 = Double.parseDouble(txtNumero2.getText());
@@ -34,7 +38,8 @@ public class CalculadoraController implements Initializable {
         lbResultado.setText(result.toString());
     }
     
-    private void subtracao(ActionEvent event) {
+    @FXML
+    private void subitracao(ActionEvent event) {
         Double num1 = Double.parseDouble(txtNumero1.getText());
        Double num2 = Double.parseDouble(txtNumero2.getText());
        Double result = null;
@@ -42,6 +47,7 @@ public class CalculadoraController implements Initializable {
         lbResultado.setText(result.toString());
     }
     
+    @FXML
     private void mutiplicacao(ActionEvent event) {
         Double num1 = Double.parseDouble(txtNumero1.getText());
        Double num2 = Double.parseDouble(txtNumero2.getText());
@@ -50,6 +56,7 @@ public class CalculadoraController implements Initializable {
         lbResultado.setText(result.toString());
     }
     
+    @FXML
     private void divicao(ActionEvent event) {
         Double num1 = Double.parseDouble(txtNumero1.getText());
        Double num2 = Double.parseDouble(txtNumero2.getText());
@@ -60,7 +67,6 @@ public class CalculadoraController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
     }    
     
 }
