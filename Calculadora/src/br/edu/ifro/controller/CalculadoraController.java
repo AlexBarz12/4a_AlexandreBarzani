@@ -7,18 +7,50 @@ package br.edu.ifro.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 /**
- * FXML Controller class
  *
- * @author 03821526203
+ * @author 3019657
  */
 public class CalculadoraController implements Initializable {
-
-    /**
-     * Initializes the controller class.
-     */
+    
+    @FXML
+    private TextField txtNumero1,txtNumero2;
+    
+    @FXML
+    private Button btnSoma;
+    
+    @FXML
+    private Label lbResultado;
+    
+    @FXML
+    private void soma(ActionEvent event) {
+       calc("+") ;
+    }
+    
+    @FXML
+    private void subtracao(ActionEvent event) {
+        calc("-") ;
+    }
+    
+    private void calc(String op) {
+        Double num1 = Double.parseDouble(txtNumero1.getText());
+        Double num2 = Double.parseDouble(txtNumero2.getText());
+        Double result = null;
+        switch (op) {
+            case "+":
+                result = num1+num2;
+                
+        }
+        lbResultado.setText(result.toString());
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
